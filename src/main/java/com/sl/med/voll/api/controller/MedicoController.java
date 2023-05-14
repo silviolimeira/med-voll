@@ -3,6 +3,7 @@ package com.sl.med.voll.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class MedicoController {
 	}
 	
 	@GetMapping
-	public Page<DadosListagemMedico> listar(Pageable pageable) {
+	public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable) {
 		return repository.findAll(pageable).map(DadosListagemMedico::new);
 	}
 
