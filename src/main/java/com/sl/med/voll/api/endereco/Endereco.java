@@ -1,7 +1,5 @@
 package com.sl.med.voll.api.endereco;
 
-import com.sl.med.voll.api.dto.DadosEndereco;
-
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
