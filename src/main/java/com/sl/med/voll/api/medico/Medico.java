@@ -1,6 +1,5 @@
 package com.sl.med.voll.api.medico;
 
-import com.sl.med.voll.api.dto.DadosEndereco;
 import com.sl.med.voll.api.endereco.Endereco;
 
 import jakarta.persistence.Embedded;
@@ -38,11 +37,11 @@ public class Medico {
 	@Embedded
 	private Endereco endereco;
 	
-	public Medico(DadosEndereco dadosEndereco) {
-		this.nome = dadosEndereco.nome();
-		this.email = dadosEndereco.email();
-		this.crm = dadosEndereco.crm();
-		this.especialidade = dadosEndereco.especialidade();
-		this.endereco = new Endereco(dadosEndereco.endereco());
+	public Medico(DadosCadastroMedico dados) {
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.crm = dados.crm();
+		this.especialidade = dados.especialidade();
+		this.endereco = new Endereco(dados.endereco());
 	}
 }

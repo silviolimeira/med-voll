@@ -11,6 +11,7 @@ import com.sl.med.voll.api.medico.DadosCadastroMedico;
 import com.sl.med.voll.api.medico.Medico;
 import com.sl.med.voll.api.medico.MedicoRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,6 +23,7 @@ public class MedicoController {
 	private MedicoRepository repository;
 
 	@PostMapping
+	@Transactional
 	public void cadastrar(@RequestBody DadosCadastroMedico dados) {
 		repository.save(new Medico(dados));
 	}
