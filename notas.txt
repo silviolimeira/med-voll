@@ -1,4 +1,12 @@
 
+Deletando as migrações:
+  delete from flyway_schema_history where success = 0;
+
+Deletando e recriando o banco de dados:
+  drop database vollmed_api;
+  create database vollmed_api;
+
+
 02. Requisições POST
 
 . Mapear requisições POST em uma classe Controller;
@@ -15,4 +23,17 @@
   via Java Records, para representar os dados
   recebidos em uma requisição POST.
   
+
+03. Spring Data JPA
+
+  . Adicionar novas dependências no projeto
+  . Mapear uma entidade JPA e criar uma
+    interface Repostiory para ela;
+  . Utilizar o Flyway como ferramenta de
+    Migrations do projeto;
+  . Realizar validações com Bean Validation
+    utilizando algumas de suas anotações, como a
+    @NotBlank
+    
+    
 
