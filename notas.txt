@@ -60,6 +60,22 @@ Deletando e recriando o banco de dados:
  . Implementar o conceito de exclusão lógica com
    o uso de um atributo booleano;
    
-    
+Curso 2   
+   
+01. Boas práticas na API
+ 
+ . Utilizar a classe Response Entity, do Spring,
+   para personalizar os retornos dos métodos de
+   uma classe Controller;
+ 
+ . Modificar o código HTTP desenvolvido nas
+   respostas da API;
+   
+ . Adicionar cabeçalhos nas respostas da API;
+ 
+ . Utilizar os códigos HTTP apropriados para
+   cada operação realizada na API.
+   
+     
     
 

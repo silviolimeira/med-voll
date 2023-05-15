@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.sl.med.voll.api.medico.DadosAtualizacaoMedico;
 import com.sl.med.voll.api.medico.DadosCadastroMedico;
@@ -35,8 +36,10 @@ public class MedicoController {
 
 	@PostMapping
 	@Transactional
-	public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
-		repository.save(new Medico(dados));
+	public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados, UriComponentsBuilder uriBuilder) {
+		var medico = repository.save(new Medico(dados));
+		var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
+		return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
 	}
 	
 	@GetMapping
@@ -62,4 +65,12 @@ public class MedicoController {
 		return ResponseEntity.noContent().build();
 	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity detalhar(@PathVariable Long id) {
+		var medico = repository.getReferenceById(id);
+		
+		return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
+	}
+	
+	
 }
