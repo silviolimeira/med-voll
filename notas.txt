@@ -1,4 +1,11 @@
 
+Environment Variable:
+
+MED_VOL_SECRET=
+
+
+
+
 Deletando as migrações:
   delete from flyway_schema_history where success = 0;
 
@@ -103,6 +110,23 @@ Spring - Objetivos
 . Autenticação
 . Autorização (controle de acesso)
 . Proteção contra ataques (CSRF, clickjaking, etc.)
+
+
+03. Spring Security
+
+ . Funcionamento do processo de autenticação e
+   autorização em uma API Rest;
+   
+ . Adicionar o Spring Security ao projeto;
+ 
+ . Funciona o comportamento padrão do Spring
+   Security em uma aplicação
+   
+ . Implementar o processo de autenticação na
+   API, de maineira Stateless, utilizando as classes e
+   configurações do Spring Security.
+   
+   
 
 
        
