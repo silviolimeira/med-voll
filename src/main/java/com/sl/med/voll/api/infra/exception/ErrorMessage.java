@@ -1,4 +1,4 @@
-package com.sl.med.voll.api.infra;
+package com.sl.med.voll.api.infra.exception;
 
 import java.util.List;
 
