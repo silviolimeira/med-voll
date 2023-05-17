@@ -1,12 +1,11 @@
-package com.sl.med.voll.api.medico;
+package com.sl.med.voll.api.domain.medico;
 
-import com.sl.med.voll.api.endereco.Endereco;
+import com.sl.med.voll.api.domain.endereco.Endereco;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,6 +27,7 @@ public class Medico {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	
 	private String nome;
 	private String email;
